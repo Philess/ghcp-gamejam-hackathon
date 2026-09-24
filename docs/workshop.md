@@ -11,7 +11,7 @@ contacts:
   - '@philess'
 duration_minutes: 120
 tags: GitHub, GitHub Copilot, AI, game development, TypeScript, Phaser, Playwright
-navigation_levels: 3
+navigation_levels: 2
 navigation_numbering: false
 ---
 
@@ -73,7 +73,7 @@ A clean review can earn full credit when it is documented. Rescue code must be d
 | 105-110 min | Inspect and finalize | Canvas-based improvement and passing local checks |
 | 110-120 min | Prepare delivery | Frozen commit, GitHub PR, evidence, and pitch preparation |
 
-When the timers is exhausted, prepare to showcase your project in 2 minutes to the reste of the teams
+When the timer expires, prepare to showcase your project in two minutes to the other teams.
 
 # Before the timer starts
 
@@ -105,6 +105,7 @@ Choose lightweight roles. You can rotate them during the workshop.
 
 For a two-person team, combine the scope keeper and tester/reviewer roles.
 
+---
 
 # Level 1: Define and initialize
 
@@ -180,9 +181,7 @@ This creates the target `main` branch and a `game` delivery branch. Later, your 
 
 **Checkpoint:** You have a blank application running in a browser and pushed to GitHub.
 
-# Level 2: Instruct and plan
-
-## Step 1: Add project instructions
+## Step 4: Add project instructions
 
 Create `.github/copilot-instructions.md`. An `AGENTS.md` file is also acceptable if your selected Copilot workflow loads it, but use one canonical project-instructions file and record its path.
 
@@ -207,7 +206,7 @@ You can take inspiration and adapt from the following instructions to your game:
 
 The instructions should describe your actual project. Remove rules that do not apply and add rules for your chosen mechanic.
 
-## Step 2: Ask Copilot for a plan
+## Step 5: Ask Copilot for a plan
 
 Open the repository in the GitHub Copilot App or launch GitHub Copilot CLI from the repository root, then start in Plan mode.
 
@@ -250,9 +249,10 @@ Before approval, check:
 
 Reject or simplify anything that exceeds the scope.
 
-## Step 3: Approve implementation
 
-When the plan is ready, DON'T validate the implementation imediately but ask Copilot to implement only the first playable slice:
+## Step 6: Approve the plan and kickstart implementation
+
+When the plan is ready, do not ask Copilot to implement the entire plan immediately. Ask it to implement only the first playable slice:
 
 ```markdown
 Implement the approved plan in the smallest playable increments.
@@ -267,9 +267,11 @@ Do not add polish, assets, or additional mechanics yet.
 
 **Checkpoint:** Your instructions file is committed, and the team has approved a bounded implementation plan.
 
-# Level 3: Build the playable loop
+---
 
-## Your challenge
+# Level 2: Implement
+
+## Build the playable loop
 
 Turn your approved plan into the smallest complete game you can finish.
 
@@ -283,7 +285,7 @@ Your game should let a new player:
 - Reach a visible outcome.
 - Restart without refreshing the page.
 
-## Hints
+### Hints
 
 - Get one complete loop working before adding visual polish.
 - Keep important state observable so that people and automated tests can understand what happened.
@@ -295,9 +297,7 @@ Your game should let a new player:
 
 **Checkpoint:** Someone outside the implementation can play a complete round without coaching.
 
-# Level 4: Run the model duel
-
-## Your challenge
+## Run the model duel
 
 Use two named models on the same small task and decide which response is more useful for your game.
 
@@ -322,9 +322,7 @@ Consider correctness, relevance, simplicity, testability, and respect for your p
 
 **Checkpoint:** Another team could understand why you preferred one response.
 
-# Level 5: Playtest and add game feel
-
-## Your challenge
+## Playtest and add game feel
 
 Let someone who did not drive the implementation try the game. For the first ten seconds, do not explain anything.
 
@@ -332,7 +330,7 @@ Observe where they hesitate, what they misunderstand, and whether the game clear
 
 Use the remaining time to improve readability and game feel. Choose small effects that support the mechanic rather than distract from it.
 
-## Hints
+### Hints
 
 - Ask: "Can a new player understand what to do within ten seconds?"
 - Favor feedback tied directly to player actions.
@@ -344,9 +342,11 @@ Use the remaining time to improve readability and game feel. Choose small effect
 
 **Checkpoint:** The game communicates its rules and reactions more clearly than before the playtest.
 
-# Level 6: Test, review, and rubber-duck
+---
 
-## Your challenge
+# Level 3: Test & review
+
+## Review, Test & critique with Rubber Duck agent
 
 Build confidence in your game using three different perspectives:
 
@@ -360,7 +360,7 @@ For review, focus on high-risk areas such as state reset, timers, listeners, col
 
 For the rubber-duck activity, the participant explains first. Try to discover one invariant that should always remain true.
 
-## Hints
+### Hints
 
 - Keep automated scenarios deterministic and short.
 - Use visible status or a read-only state interface when canvas pixels are not enough.
@@ -372,9 +372,7 @@ For the rubber-duck activity, the participant explains first. Try to discover on
 
 **Checkpoint:** Your team can explain why the frozen game is reliable, not merely why it appears to work.
 
-# Level 7: Inspect and finalize
-
-## Your challenge
+## Inspect and finalize
 
 Use a Copilot App canvas to inspect something that matters to your submission. This could be the running game, your evidence file, the pitch, a diagram, or a test artifact. The Phaser rendering canvas itself does not count.
 
@@ -384,7 +382,7 @@ Make one improvement because of something you noticed in the canvas.
 
 Then decide whether the game is ready to freeze. Run the relevant automated checks, play one final round, inspect the final diff, and fix only release-blocking problems.
 
-## Hints
+### Hints
 
 - Do not add another mechanic during finalization.
 - Check restart more than once.
@@ -396,7 +394,9 @@ Then decide whether the game is ready to freeze. Run the relevant automated chec
 
 **Checkpoint:** The frozen commit is pushed, reproducible, tested, and playable.
 
-# Level 8: Deliver and pitch
+---
+
+# Level 4: Deliver and pitch
 
 ## Your challenge
 
@@ -425,7 +425,9 @@ Use one page or no more than three slides, and stay within the facilitator's tim
 - [ ] The final build and tests have recorded results.
 - [ ] The pitch is ready and fits the facilitator's time limit.
 
-# Recovery guide
+---
+
+# Troubleshooting & Recovery guide
 
 ## No playable loop by minute 50
 
@@ -479,6 +481,8 @@ Push when service returns. Do not claim that remote delivery succeeded before it
 ## A selected model is unavailable
 
 Use the facilitator's alternate model pair or common comparison pack. Apply the same prompt, baseline, context, and evaluation criteria.
+
+---
 
 # Bonus challenges
 
