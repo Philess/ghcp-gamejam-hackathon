@@ -27,7 +27,7 @@ Provide constraints, templates, and recovery material, not a finished competitio
 - No backend, accounts, multiplayer, external runtime API, or asset-generation dependency.
 - Guidance for adding a minimal HTML shell suitable for accessible controls/status, plus a seeded or controlled test scenario.
 - A reference Playwright smoke-test pattern and browser configuration guidance. Participants create and document their own build/test commands.
-- Empty evidence and pitch templates. Participants author their own project setup, instructions, and gameplay.
+- A lightweight pitch outline. Participants author their own project setup, instructions, and gameplay.
 - A lightweight GitHub Actions pipeline if available; keep local checks runnable without waiting for CI.
 - A rescue snippet or branch with a basic game loop, available to all teams if needed. Rescue behavior itself does not earn implementation credit.
 
@@ -37,7 +37,9 @@ Build **one screen, one core mechanic, one 30-60 second round**. A player must b
 
 Choose one familiar mechanic: dodge, collect, deliver, or survive. Limit controls to arrows/WASD and at most one action button. No additional levels until the loop works.
 
-Required practices:
+Suggested activities:
+
+These activities help teams explore GitHub Copilot, but they are not additional deliverables. The goal remains simple: build a game and present it.
 
 1. Use the Copilot App or Copilot CLI as the primary AI workspace and Plan mode before gameplay implementation.
 2. Write concise `AGENTS.md` and/or `.github/copilot-instructions.md` rules that the chosen app workflow actually loads.
@@ -54,24 +56,18 @@ Required practices:
 
 **Data boundary:** Use invented data and original or appropriately licensed assets. No customer records, credentials, production systems, or unapproved code mirroring.
 
-## 3. Expectations
+## 3. What matters
 
-| Criterion | Breakdown and evidence |
+| Goal | What success looks like |
 | --- | --- |
-| Playable game | Runs from documented setup; understandable controls and objective; working input and meaningful core mechanic; reachable outcome; restart resets the round. Judge plays the frozen version. |
-| Plan-first discipline | Plan precedes gameplay edits; acceptance criteria and non-goals; evidence of a human scope decision or correction. |
-| Project instructions | Actionable, project-specific rules; evidence the agent applied a rule in its work. File presence alone is insufficient. |
-| Model comparison | Same task, baseline, context and settings where supported; recorded outputs and observable differences; justified choice and limitation. |
-| Playwright and playtesting | Automated start/input check with state assertion; outcome/restart checks; final run has recorded result and browser-error check; human playtest observation and resulting fix or justified triage. |
-| Review and rubber-duck | Separate code-review pass; prioritized fix or reasoned rejection, followed by relevant recheck; human explanation challenged by the agent and resulting insight. A clean review can earn full credit with evidence. |
-| Game feel: "juice" | Two purposeful feedback improvements; neither obscures controls, status, or play. |
-| App canvas | Inspect a relevant artifact in an app canvas; make and save a specific improvement based on that inspection. |
-| GitHub delivery and integration | Agent assists a scoped integration and explains/checks the result; human inspects/approves it; final commit is pushed and linked in a GitHub PR, merged if policy permits. |
-| Pitch | Clear hook and playable demonstration; one concrete AI-workflow learning; concise document/slides and time discipline. |
+| Build a playable game | The objective and controls are understandable; input affects the game; a round reaches an outcome; restart works. |
+| Make it enjoyable | Player actions have clear feedback, the game is readable, and the chosen mechanic feels satisfying. |
+| Keep it reliable | The final version runs, survives a complete playthrough, and does not produce unexpected browser errors. |
+| Present the result | The team demonstrates a short round and shares one useful thing learned while working with Copilot. |
 
 ## 4. Bonus
 
-| Bonus | Evidence |
+| Bonus | Idea |
 | --- | --- |
 | Custom agent | A focused role with suitable boundaries, actually invoked to produce a useful result. |
 | Custom skill | A reusable procedure with a clear trigger and steps, actually used successfully. A prompt merely renamed "skill" does not count. |
@@ -93,7 +89,7 @@ Keep scoring and game-over rules separate enough to test deterministically.
 Restart must reset score, timers, entities, listeners, and transient effects.
 Use the documented build and Playwright commands before reporting completion.
 Do not weaken tests to hide failures; report remaining failures explicitly.
-Keep credentials and customer data out of code, prompts, and evidence.
+Keep credentials and customer data out of code and prompts.
 ```
 
 ### The model duel: an experiment, not a benchmark
@@ -104,14 +100,10 @@ Spend at most ten minutes. Do not build two complete games.
 - Open two fresh sessions with the same baseline, instructions, prompt, files and tools. Select Model A and Model B explicitly; do not use Auto for this comparison.
 - Allow the same short time budget, one initial response and no unequal follow-up help. Separate worktrees or read-only proposed patches prevent cross-contamination.
 - Compare correctness, relevance, patch size and test usefulness. Apply/run promising patches in isolation if time allows; label unexecuted proposals as unverified.
-- Record elapsed time if observed, but do not infer cost or treat one trial as a scientific performance ranking.
+- Notice differences in speed or approach, but do not infer cost or treat one trial as a scientific performance ranking.
 - If a model is unavailable, the organizer supplies the same alternate model pair to affected teams. If that is impossible, use a preprepared comparison pack of two outputs with identical provenance/context; equivalent points remain available.
 
-Capture one small table:
-
-| Task/baseline | Model/settings | Elapsed time | Observed result | Verified or proposed? | Decision |
-| --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |
+Discuss what each model did differently and choose whichever response helps the game most.
 
 ### Playwright: prove behavior, not just pixels
 
@@ -127,7 +119,7 @@ Each team should provide DOM controls/status or a documented, read-only test-sta
 
 Do not expose arbitrary production state-mutation APIs just to pass tests. Do not replace actual play with a fake DOM status. Retain a result/trace or screenshot alongside assertions and test output.
 
-Human playtest question: "Can a new player understand what to do within ten seconds?" Have the observer stay silent initially; record where the player hesitates.
+Human playtest question: "Can a new player understand what to do within ten seconds?" Have the observer stay silent initially and improve the most obvious point of hesitation.
 
 ### Review and rubber-duck are different activities
 
@@ -164,20 +156,9 @@ No forced conflict is necessary. Do not bypass protected branches or approval ru
 
 If native Agent Merge is an important product learning objective, run a separate organizer demonstration on an approved, synthetic GitHub repository outside the competition clock. It earns no points and requires no customer-code mirroring. Do not call the GitHub substitute "native Agent Merge."
 
-## 7. Evidence and pitch: keep the overhead under five minutes
+## 7. Present the game
 
-Provide a single `HACKATHON.md` template for teams to copy into their repository with these fields:
-
-- Team, game name, GitHub PR, frozen commit, launch command, controls.
-- Plan checkpoint and the key scope decision.
-- Instructions path and one example of adherence.
-- Model comparison table.
-- Final build/Playwright result, human observation, review decision and rubber-duck insight.
-- Canvas artifact and the change it informed.
-- Up to two juice effects; any bonus evidence.
-- Known limitations and reused rescue snippets/assets, if any.
-
-Link concise excerpts or screenshots as work happens. Do not require full chat exports or sensitive logs.
+Do not spend workshop time assembling a report. The game and the final presentation are the deliverables.
 
 **Pitch format: one page or three slides maximum**
 
@@ -191,7 +172,7 @@ Suggested 90-second delivery: 15 seconds hook, 45 seconds demo, 30 seconds learn
 
 Before the day: validate the kit on representative managed laptops; confirm policies, GitHub permissions, model access and app features; publish the rubric and setup guidance; arrange one floating coach per roughly four teams.
 
-During the event: show a countdown; inspect evidence during checkpoints instead of reading everything after the pitches; give equal access to rescue help. No surprise mechanic changes or late bonus announcements.
+During the event: show a countdown, check that teams are progressing toward a playable loop, and give equal access to rescue help. No surprise mechanic changes or late bonus announcements.
 
 Recovery rules:
 
@@ -199,7 +180,7 @@ Recovery rules:
 - **Agent stuck for three minutes:** Ask for the smallest reproducible problem, revert only the team's failed patch to its checkpoint, or ask a coach. Do not regenerate the whole app.
 - **Canvas fails:** Use the prevalidated alternate app canvas or prepared workstation. If an event-wide outage prevents the feature, award its five points uniformly and disclose it.
 - **Playwright MCP fails:** Run the existing Playwright tests through terminal tools. Do not count a manual playthrough as an automated test.
-- **GitHub/CI outage:** Preserve the local commit, local check output and attempted-delivery evidence. Judges award otherwise-earned delivery points consistently; push later without pretending it already happened.
+- **GitHub/CI outage:** Preserve the local commit and local check output. Push later without pretending remote delivery already succeeded.
 - **Model outage:** Use the alternate pair or common comparison pack described above.
 - **At minute 90:** Stop adding mechanics. Spend the remaining build time on reliability, delivery and pitch.
 

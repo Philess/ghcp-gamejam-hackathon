@@ -29,11 +29,9 @@ By the end of the workshop, your team should have:
 - A round lasting approximately 30-60 seconds.
 - Clear controls, an objective, an end state, and a working restart.
 - Project-specific instructions for GitHub Copilot.
-- A documented comparison of two AI models.
+- A quick comparison of two AI models.
 - Automated gameplay checks with Playwright.
-- Evidence from a human playtest, code review, and rubber-duck discussion.
-- Two small game-feel improvements.
-- A GitHub pull request containing the frozen version of the game.
+- Feedback from a human playtest, code review, and rubber-duck discussion.
 - A 90-second pitch.
 
 <div class="warning" data-title="Keep the scope small">
@@ -53,11 +51,11 @@ By the end of the workshop, your team should have:
 7. Preserve a known-good commit before risky changes.
 8. Stop adding mechanics when the facilitator announces the reliability phase.
 
-## How you are judged
+## What matters
 
-The detailed criteria are in the repository [README](../README.md#3-expectations). Judges will look for a playable loop, plan-first discipline, applied project instructions, a fair model comparison, meaningful Playwright checks, separate review and rubber-duck activities, purposeful game feel, a canvas-informed improvement, GitHub delivery, and a concise pitch.
+The only deliverables are a playable game and its final presentation. The activities in this guide are there to help you explore Copilot and improve the result, not to create paperwork.
 
-A clean review can earn full credit when it is documented. Rescue code must be declared and does not earn implementation credit for inherited behavior.
+Focus on whether the game is understandable, fun, reliable, and ready to demonstrate.
 
 ## Manage your time - Schedule suggestion
 
@@ -71,7 +69,7 @@ A clean review can earn full credit when it is documented. Rescue code must be d
 | 90-100 min | Test | Playwright checks proving the core behavior |
 | 100-105 min | Review and explain | Code-review decision and rubber-duck insight |
 | 105-110 min | Inspect and finalize | Canvas-based improvement and passing local checks |
-| 110-120 min | Prepare delivery | Frozen commit, GitHub PR, evidence, and pitch preparation |
+| 110-120 min | Prepare delivery | Frozen commit, GitHub PR, final checks, and pitch preparation |
 
 When the timer expires, prepare to showcase your project in two minutes to the other teams.
 
@@ -101,7 +99,7 @@ Choose lightweight roles. You can rotate them during the workshop.
 
 - **Driver:** operates the computer and the selected Copilot App or Copilot CLI workflow.
 - **Scope keeper:** protects the one-screen, one-mechanic constraint.
-- **Tester/reviewer:** watches behavior, records evidence, and challenges assumptions.
+- **Tester/reviewer:** watches behavior, playtests the game, and challenges assumptions.
 
 For a two-person team, combine the scope keeper and tester/reviewer roles.
 
@@ -293,8 +291,6 @@ Your game should let a new player:
 - Preserve a known-good commit when the loop becomes playable.
 - If Copilot proposes a large architecture, challenge it to find a smaller path.
 
-**Evidence:** Record the playable commit and any major scope decision in `HACKATHON.md`.
-
 **Checkpoint:** Someone outside the implementation can play a complete round without coaching.
 
 ## Run the model duel
@@ -318,8 +314,6 @@ Consider correctness, relevance, simplicity, testability, and respect for your p
 
 </div>
 
-**Evidence:** Complete the model comparison table in `HACKATHON.md` and record your decision.
-
 **Checkpoint:** Another team could understand why you preferred one response.
 
 ## Playtest and add game feel
@@ -337,8 +331,6 @@ Use the remaining time to improve readability and game feel. Choose small effect
 - A small animation, restrained particle effect, score response, transition, or optional sound can be enough.
 - Avoid rapid flashing, violent screen shake, unreadable overlays, and autoplay audio without mute control.
 - It is valid to reject playtest feedback when you can explain why it falls outside the scope.
-
-**Evidence:** Record one observation, the decision it produced, and the two feedback improvements in `HACKATHON.md`.
 
 **Checkpoint:** The game communicates its rules and reactions more clearly than before the playtest.
 
@@ -365,16 +357,14 @@ For the rubber-duck activity, the participant explains first. Try to discover on
 - Keep automated scenarios deterministic and short.
 - Use visible status or a read-only state interface when canvas pixels are not enough.
 - Do not weaken tests just to make them pass.
-- Fix the highest-confidence review finding, or record why you rejected it.
+- Fix the highest-confidence review finding, or decide as a team why it should not be changed.
 - Preserve test output, a trace, or a screenshot when useful.
-
-**Evidence:** Record build and test results, the review decision, and the rubber-duck insight in `HACKATHON.md`.
 
 **Checkpoint:** Your team can explain why the frozen game is reliable, not merely why it appears to work.
 
 ## Inspect and finalize
 
-Use a Copilot App canvas to inspect something that matters to your submission. This could be the running game, your evidence file, the pitch, a diagram, or a test artifact. The Phaser rendering canvas itself does not count.
+Use a Copilot App canvas to inspect something that matters to your submission. This could be the running game, the pitch, a diagram, or a test artifact. The Phaser rendering canvas itself does not count.
 
 If you worked primarily with Copilot CLI, open the relevant repository artifact in the Copilot App for this activity.
 
@@ -388,9 +378,7 @@ Then decide whether the game is ready to freeze. Run the relevant automated chec
 - Check restart more than once.
 - Look for browser errors and accidental files in the final diff.
 - Ask Copilot to commit and push only after a human reviews the final state.
-- Record the exact frozen commit.
-
-**Evidence:** Record the canvas used, the improvement it informed, final validation results, and the frozen commit SHA.
+- Keep track of the exact frozen commit used for the presentation.
 
 **Checkpoint:** The frozen commit is pushed, reproducible, tested, and playable.
 
@@ -404,7 +392,7 @@ Deliver a reviewable frozen version and prepare a short live pitch.
 
 Ask Copilot to help inspect the `game` branch against `main`, summarize the work, and prepare a pull request. A human must review the final diff and proposed pull request before it is created. Do not bypass repository protections or merge conditions.
 
-Your pull request should make it easy for someone else to understand how to run and judge the game. Include the hook, controls, objective, validation results, known limitations, `HACKATHON.md`, and frozen commit.
+Your pull request should make it easy for someone else to run the game. Include the hook, controls, objective, and any important known limitations.
 
 For the pitch, show the game rather than describing the implementation. Cover:
 
@@ -419,10 +407,10 @@ Use one page or no more than three slides, and stay within the facilitator's tim
 
 - [ ] A new player can understand, play, finish, and restart the game.
 - [ ] Project-specific Copilot instructions are present.
-- [ ] The model comparison is fair and documented.
+- [ ] The model comparison helped the team make a useful choice.
 - [ ] Playwright proves meaningful gameplay behavior.
-- [ ] Human playtest, review, and rubber-duck evidence is recorded.
-- [ ] The final build and tests have recorded results.
+- [ ] Human playtest, review, and rubber-duck activities improved the game.
+- [ ] The final build and tests pass.
 - [ ] The pitch is ready and fits the facilitator's time limit.
 
 ---
@@ -440,7 +428,7 @@ Cut scope immediately:
 
 Remove assets, menus, extra enemies, levels, and secondary mechanics.
 
-Ask a coach for the shared rescue branch or rescue snippet if the reduced loop is still blocked. Declare every inherited feature in `HACKATHON.md`; inherited behavior does not earn implementation credit.
+Ask a coach for the shared rescue branch or rescue snippet if the reduced loop is still blocked. Use it to get back to building and having fun.
 
 ## Copilot is stuck
 
@@ -462,7 +450,7 @@ Ask Copilot to run the existing browser test through the available terminal tool
 - The attempted test.
 - A manual playthrough result.
 
-A manual playthrough does not count as an automated test, but honest evidence is better than claiming an unverified result.
+A manual playthrough does not replace an automated test, but it can still help you find and fix gameplay problems.
 
 ## A canvas is unavailable
 
